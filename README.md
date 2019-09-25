@@ -5,7 +5,12 @@
   - String、StringBuilder、StringBuffer
 - 集合
   - Map
+    - HashMap
+    - LinkedHashMap
+    - TreeMap
   - List
+    - ArrayList
+    - LinkedList
   - Set
 - 并发
   - 线程池
@@ -33,10 +38,21 @@
 
 - 传输层
   - TCP
+    - 报文结构
+    - 连接管理
+    - 拥塞控制
+    - 流量控制
   - UDP
 - 应用层
   - HTTP
+    - 报文结构
+    - 状态码
+    - 请求方法
+    - cookie 与 session
   - HTTPS
+    - 握手过程
+    - 密码学应用
+    - 证书管理
 
 ## MySQL
 
@@ -46,3 +62,19 @@
 - 主从复制
 - 分库分表
 
+## 分布式/微服务
+
+- 限流算法
+- 负载均衡算法
+- 服务熔断/服务降级
+
+## 信息安全
+
+- 密码学
+  - 加密与解密
+  - 签名
+- 安全问题
+  - 缓冲区溢出
+  - SQL 注入
+  - XSS 攻击
+  - Java 序列化漏洞
