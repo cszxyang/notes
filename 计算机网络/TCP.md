@@ -2,7 +2,7 @@
 
 通常由一端打开一个套接字（socket）然后监听来自另一方的连接，这就是通常所指的`被动打开（passive open）`。服务器端被被动打开以后，用户端就能开始创建`主动打开（active open）`。
 
-![connection_established.png](G:/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/asserts/connection_established.png)
+![connection_established.png](./asserts/connection_established.png)
 
 1. 服务器创建`TCB表项`，进入`LISTEN`状态，准备接受客户端进程的连接请求。
 2. 客户端进程先创建`TCB表项`，记录连接信息和缓存指针，然后向服务器发送请求报文**MR**，**MR**头中的同步位`SYN（Synchronize Sequence Numbers）= 1`，同时随机选择一个初始序号 `seq = x`（一般地，seq=0）。**MR**不允许携带数据，这时客户端进入`SYN-SENT`状态。
@@ -22,7 +22,7 @@
 
 TCP连接释放经历了所谓的`四次挥手`过程。
 
-![connection_release.png](G:/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/asserts/connection-release.png)
+![connection_release.png](./asserts/connection-release.png)
 
 1. 数据传输结束后，通信的双方都可释放连接。现在服务器和客户端都处于`ESTABLISHED`状态。
 2. 客户端应用进程先向其TCP发出`连接释放报文段`，并停止再发送数据，`主动关闭`TCP连接。客户端把连接释放报文段首部的终止控制位`FIN=1` , 其序号`seq = u`, 它等于前面己传送过的数据的最后一个字节的序号加1。这时客户端进入`FIN-WAIT-1`状态，等待服务器确认。FIN报文段即使不携带数据。
@@ -67,7 +67,7 @@ TCP连接释放经历了所谓的`四次挥手`过程。
 - 快重传：发送方只要一连收到三个重复确认，就知道接收方没有收到该确认对应报文的下一个报文，因而进行立即重传。
 - 快恢复：经过快重传后，发送方世道现在丢失了几个报文，网络不是很稳定但也不至于很拥塞，于是启用快恢复算法，降低门限值后使用拥塞避免而不是慢开始算法。
 
-![img](G:/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/asserts/tcp_congestion_ctrl.png)
+![img](./asserts/tcp_congestion_ctrl.png)
 
 1. 慢开始末段，拥塞窗口大小到门限值，改为拥塞避免
 2. 出现超时，门限值 = 拥塞窗口大小 / 2，拥塞窗口大小 = 1，重新进入慢开始状态
