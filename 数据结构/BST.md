@@ -7,7 +7,7 @@
 3. 任意节点的左、右子树也分别为二叉查找树；
 4. 没有键值相等的节点。
 
-![img](./asserts/tree-bst-structure.jpg)
+![img](./assets/tree-bst-structure.jpg)
 
 二叉查找树相比于其他数据结构的优势在于查找、插入的时间复杂度较低。为 O(log n)。二叉查找树是基础性数据结构，用于构建更为抽象的数据结构，如集合、多重集、关联数组等。
 
@@ -100,7 +100,7 @@ public boolean contains(int val) { return containsRecursively(root, val); }
 
 递归删除二叉树中`current`结点下值为`val`的结点，首个判断的分析类似插入结点函数`addRecursively()`，通过比较`val`与左右子结点的大小决定递归的调用，一共分为4种情况
 
-![img](./asserts//delete.png)
+![img](./assets//delete.png)
 
 - 要删除的结点存在左右孩子，如图一所示
 - 要删除的结点仅存在左孩子，如图二所示
@@ -109,7 +109,7 @@ public boolean contains(int val) { return containsRecursively(root, val); }
 
 对于图二，图三，图四这三种情况，实现很容易。我们重点说下图一的情况。首先我们要明确一条定理：**二叉查找树的中序遍历序列是升序序列。**因此对于图一的情况，我们采取的策略就是，找到要删除结点（在中序遍历中）的后继，用后继替换要删除的结点，而后继自然是当前结点的右子树中的最小结点
 
-![img](./asserts//delete_1.png)
+![img](./assets//delete_1.png)
 
 如上图所示，待删除的是值为9的结点`node`，其左右子结点均不为空，则先沿着它的右子树的左子树找到最小的替代，即值为14的结点，将之取代`node`的位置。
 
@@ -185,7 +185,7 @@ private int maxDepthRecursively(TreeNode root) {
 
 广度优先搜索从树的根结点开始，在检查下一层的结点之前检查同一层的所有结点，
 
-![Breadth-First-Search.gif](./asserts/Breadth-First-Search.gif)
+![Breadth-First-Search.gif](./assets/Breadth-First-Search.gif)
 
 二叉树的`层次遍历`就是利用这种思想。在层次遍历中，当前层先访问的结点，在进行下一层的访问时其左右孩子也先被访问，这符合队列`先进先出`的特点。因此在进行层次遍历时，可使用一个辅助队列存储当前层的被访问过的结点，其具体步骤如下
 
@@ -216,7 +216,7 @@ public void traverseLevelOrder() {
 
 深度优先搜索从根结点开始，并沿着一个特定的分支向下搜索，展开子结点并沿着同样的路径向下，直到搜索索到达死胡同，即该路径下无含有子结点的结点时，搜索才会回溯到它上次遇到的结点，如果该结点的子结点没有被完全检查。则按照另一条路径继续搜索，下面是利用深度优先搜索算法先序查找二叉搜索树中某结点的示例动图：
 
-![DFS](./asserts//Depth-First-Search.gif)
+![DFS](./assets//Depth-First-Search.gif)
 
 使用递归的方法，很容易就能实现二叉搜索树的深度优先遍历
 
