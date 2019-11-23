@@ -1,8 +1,6 @@
 ## 简介
 
-Java NIO（New IO）是从 Java 1.4 版本开始引入的一个新的IO API，可以替代标准的Java IO API。NIO与原来的IO有同样的作用和目的，但是使用的方式完全不同，NIO支持面向缓冲区的、基于通道的IO操作。NIO将以更加高效的方式进行文件的读写操作。
-
-Java NIO **与** IO 的主要区别
+Java NIO（New IO）是从 Java 1.4 版本开始引入的一个新的IO API，可以替代标准的Java IO API。NIO与原来的IO有同样的作用和目的，但是使用的方式完全不同，NIO支持面向缓冲区的、基于通道的IO操作。NIO将以更加高效的方式进行文件的读写操作。Java NIO **与** IO 的主要区别：
 
 | IO                        | NIO                            |
 | ------------------------- | ------------------------------ |
@@ -198,3 +196,8 @@ public void test() throws IOException {
 |         Selector wakeup()         |            使一个还没返回的 select() 方法立即返回            |
 |           void close()            |                         关闭该选择器                         |
 
+
+
+## 参考
+
+1. bilibili--尚硅谷 NIO 视频教程：https://www.bilibili.com/video/av35956039/?p=1
