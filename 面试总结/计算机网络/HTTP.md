@@ -21,7 +21,7 @@
 下面对各部分进行解释：
 
 1. 方法（method）：客户端希望对服务器资源执行的动作，是一个单独的动词，如GET、POST、PUT、DELETE、HEAD等
-2. 请求URL（request-URL）：客户端所请求资源的完整URL
+2. 请求 URL（request-URL）：客户端所请求资源的完整URL
 3. 版本（version）：报文所使用的HTTP版本号，版本格式：HTTP/\<major>\<minor>，其中 major 为主版本号，minor 为次版本号
 4. 状态码（status-code）：一个三位数，描述请求过程发生的情况，可用第一位数字进行分类
 5. 原因短语（reason-phrase）：用来描述状态码，包含行终止序列之前的所有文本，如 HTTP/1.0 200 OK 中的OK
